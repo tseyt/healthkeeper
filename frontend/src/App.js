@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { UserAction } from 'actions';
 import { Route, BrowserRouter, Redirect } from 'react-router-dom';
 import './App.css';
 
@@ -23,31 +25,25 @@ class App extends React.Component {
   
   render() {
     const { user: { name, patient_id } } = this.props;
+    const loggedIn = this.state;
 
-    if (name) {
-      loggedIn = true;
-    }
-    else if (!name) {
-      loggedIn = false;
-    }
-    
     return (
       <div className="App">
           <BrowserRouter>
             <Route exact path="/">
-              <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
+              <Header loggedIn={loggedIn}/>
               {name ? <Profile/> : <Home/> }
             </Route>
             <Route exact path="/sign-up">
-              <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
+              <Header loggedIn={loggedIn}/>
               {!name ?  <Redirect to='/' /> : <Signup/> }
             </Route>
             <Route exact path="/login">
-              <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
-              {loggedIn ? <Redirect to='/' /> : <Login loginFunction={logInFunction}/> }
+              <Header loggedIn={loggedIn}/>
+              {loggedIn ? <Redirect to='/' /> : <Login /> }
             </Route>
             <Route exact path="/profile">
-              <SideHeader loggedIn={loggedIn} logoutFunction={logoutFunction}/>
+              <SideHeader loggedIn={loggedIn}/>
               {loggedIn ?  <Profile/> : <Home/> }
             </Route>
           </BrowserRouter>

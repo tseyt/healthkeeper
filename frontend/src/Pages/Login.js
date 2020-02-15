@@ -1,6 +1,9 @@
 import React from "react";
+import { connect } from 'react-redux';
+import { ApiService } from 'services';
+import { UserAction } from 'actions';
 
-class Login extends Component {
+class Login extends React.Component {
   constructor(props) {
     // Inherit constructor
     super(props);
@@ -108,9 +111,9 @@ class Login extends Component {
             {error && <span className="error">{error}</span>}
           </div>
           <div className="bottom">
-            <Button type="submit" className="green" loading={isSigningIn}>
+            <button type="submit" className="green" loading={isSigningIn}>
               {"CONFIRM"}
-            </Button>
+            </button>
           </div>
         </form>
       </div>
