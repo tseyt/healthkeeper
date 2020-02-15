@@ -1,38 +1,94 @@
 .App {
   text-align: center;
+  height: 100%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family: Montserrat;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img{
+  height: 80px; 
+  width: 220px; 
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow: hidden;
+  padding: 10px 10px;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  margin: auto;
+  background: #64D1FC;
+}
+header a {
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 1.5em 2em;
+  text-decoration: none;
+  font-size: 1.2em; 
+  transition: all .2s ease-in-out;
+}
+.logo{
+  float: none;
+  padding: 0%;
+}
+header a:hover{
+  transform: scale(1.1);
 }
 
-.App-link {
-  color: #61dafb;
+.welcome{
+  font-size: 22px;
+  padding: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.forms{
+  margin: 150px auto;
+  max-width: 500px;
 }
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+button{
+  color: black;
+  background-color: Transparent;
+  font-size: large;
+  transition: all 0.5s;
+  position: relative;
+  border: 1px solid black;
+  line-height: 50px;;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  width: 40%;
+}
+button:hover{
+  border-radius: 25px;
+}
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Login(){
     return (
-        <div className='login-comp'>
+        <div>
             <form>
                 <label htmlFor='loginEmail'> Email </label>
                 <input type='email' name='loginEmail' placeholder='email'/>

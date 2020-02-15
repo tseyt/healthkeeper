@@ -7,6 +7,7 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Profile from './Pages/Profile';
 import Header from './Components/Header';
+import SideHeader from './Components/SideHeader';
 
 
 function App() {
@@ -22,19 +23,22 @@ function App() {
 
   return (
     <div className="App">
-      <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
         <BrowserRouter>
           <Route exact path="/">
+            <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
             {loggedIn ? <Profile/> : <Home/> }
           </Route>
           <Route exact path="/sign-up">
+            <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
             {loggedIn ?  <Redirect to='/' /> : <Signup/> }
           </Route>
           <Route exact path="/login">
+            <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
             {loggedIn ? <Redirect to='/' /> : <Login loginFunction={logInFunction}/> }
           </Route>
           <Route exact path="/profile">
-            {loggedIn ?  <Profile/> : <Login loginFunction={logInFunction}/> }
+            <SideHeader loggedIn={loggedIn} logoutFunction={logoutFunction}/>
+            {loggedIn ?  <Profile/> : <Home/> }
           </Route>
         </BrowserRouter>
     </div>
