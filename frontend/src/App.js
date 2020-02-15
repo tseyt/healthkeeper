@@ -9,7 +9,6 @@ import Profile from './Pages/Profile';
 import Header from './Components/Header';
 import SideHeader from './Components/SideHeader';
 
-
 class App extends React.Component {
 
   constructor(props) {
@@ -18,23 +17,9 @@ class App extends React.Component {
     // State for showing/hiding components when the API (blockchain) request is loading
     this.state = {
       loading: true,
-      loggedIn: false,
     };
-    // Bind functions
-    this.loadUser = this.loadUser.bind(this);
-    this.handlePatientAccess = this.handleSignForAccess.bind(this);
-    // Call `loadUser` before mounting the app
-    this.loadUser();
   }
-
-  handlePatientAccess() {
-    // Send a request to API (blockchain) to start game
-    // And call `loadUser` again for react to render latest game status to UI
-    return ApiService.patientAccess().then(()=>{
-      return this.loadUser();
-    });
-  }
-
+  
   render() {
     return (
       <div className="App">
