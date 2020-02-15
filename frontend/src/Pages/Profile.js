@@ -50,3 +50,14 @@ class Profile extends React.Component {
   }
 
 }
+
+// Map all state to component props (for redux to connect)
+const mapStateToProps = state => state;
+
+// Map the following action to props
+const mapDispatchToProps = {
+  setUser: UserAction.setUser,
+};
+
+// Export a redux connected component
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
