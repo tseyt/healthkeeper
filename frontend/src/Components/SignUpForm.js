@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SignUp(){
     return (
-        <div className='login-comp'>
+        <div>
             <form>
                 <label htmlFor='createUsername'> Username </label>
                 <input type='username' name='createUsername' placeholder='Username'/>

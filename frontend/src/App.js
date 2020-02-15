@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Route, BrowserRouter, Redirect } from 'react-router-dom';
 import './App.css';
 
@@ -7,6 +7,7 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Profile from './Pages/Profile';
 import Header from './Components/Header';
+import SideHeader from './Components/SideHeader';
 
 
 class App extends React.Component {
@@ -35,28 +36,30 @@ class App extends React.Component {
   }
 
   render() {
-    const { user: { name, win_count, lost_count, game } } = this.props;
-
     return (
       <div className="App">
-        <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
           <BrowserRouter>
             <Route exact path="/">
+              <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
               {loggedIn ? <Profile/> : <Home/> }
             </Route>
             <Route exact path="/sign-up">
+              <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
               {loggedIn ?  <Redirect to='/' /> : <Signup/> }
             </Route>
             <Route exact path="/login">
+              <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
               {loggedIn ? <Redirect to='/' /> : <Login loginFunction={logInFunction}/> }
             </Route>
             <Route exact path="/profile">
-              {loggedIn ?  <Profile/> : <Login loginFunction={logInFunction}/> }
+              <SideHeader loggedIn={loggedIn} logoutFunction={logoutFunction}/>
+              {loggedIn ?  <Profile/> : <Home/> }
             </Route>
           </BrowserRouter>
       </div>
     );
   }
+  
 }
 
 // Map all state to component props (for redux to connect)

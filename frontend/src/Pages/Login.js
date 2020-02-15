@@ -128,10 +128,16 @@ class Login extends Component {
   export default connect(mapStateToProps, mapDispatchToProps)(Login);
   
     return (
-        <div className='welcome'>
+        <div className='forms'>
             <h1>Log In</h1>
-            <div className='login-page'>
-                <LoginForm/>
+            <div className='login-comp'>
+                <form onSubmit= >
+                    <label htmlFor='loginEmail'> Email </label>
+                    <input type='email' name='loginEmail' placeholder='email'/>
+                    <label htmlFor='loginPassword'> Password </label>
+                    <input type='password' name='loginPassword' placeholder="password"/>
+                    <button>Login</button>
+                </form>
             </div>
         </div>
     );
