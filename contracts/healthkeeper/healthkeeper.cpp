@@ -24,7 +24,7 @@ ACTION healthkeeper::clear() {
 }
 
 ACTION healthkeeper::access(name username) {
-  
+  require_auth(username);
 }
 
 EOSIO_DISPATCH(healthkeeper, (login)(clear))
