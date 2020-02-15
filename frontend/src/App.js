@@ -1,8 +1,8 @@
 import React from 'react';
-import { Route, BrowserRouter, Redirect } from 'react-router-dom';
-import './App.css';
 import { connect } from 'react-redux';
 import { UserAction } from './actions';
+import { Route, BrowserRouter, Redirect } from 'react-router-dom';
+import './App.css';
 
 import Home from './Pages/Home';
 import Login from './Pages/Login';
@@ -18,29 +18,33 @@ class App extends React.Component {
     super(props);
     // State for showing/hiding components when the API (blockchain) request is loading
     this.state = {
-      loading: true,
+      loading: false,
+      loggedIn: false,
     };
   }
   
   render() {
+    const { user: { name, patient_id } } = this.props;
+    const loggedIn = this.state;
+
     return (
       <div className="App">
           <BrowserRouter>
             <Route exact path="/">
-              <Header loggedIn={this.loggedIn}/>
-              {this.loggedIn ? <Profile/> : <Home/> }
+              <Header loggedIn={loggedIn}/>
+              {name ? <Profile/> : <Home/> }
             </Route>
             <Route exact path="/sign-up">
-              <Header loggedIn={this.loggedIn}/>
-              {this.loggedIn ?  <Redirect to='/' /> : <Signup/> }
+              <Header loggedIn={loggedIn}/>
+              {!name ? <Signup/> : <Redirect to='/' /> }
             </Route>
             <Route exact path="/login">
-              <Header loggedIn={this.loggedIn}/>
-              {this.loggedIn ? <Redirect to='/' /> : <Login/> }
+              <Header loggedIn={loggedIn}/>
+              {loggedIn ? <Login/> : <Redirect to='/'/>}
             </Route>
             <Route exact path="/profile">
-              <SideHeader loggedIn={this.loggedIn}/>
-              {this.loggedIn ?  <Profile/> : <Home/> }
+              <SideHeader loggedIn={loggedIn}/>
+              {loggedIn ?  <Profile/> : <Home/> }
             </Route>
           </BrowserRouter>
       </div>

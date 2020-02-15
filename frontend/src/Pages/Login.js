@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import {ApiService} from '../services';
 import {UserAction} from '../actions';
 
-class Login extends Component {
+class Login extends React.Component {
   constructor(props) {
     // Inherit constructor
     super(props);
@@ -75,12 +75,11 @@ class Login extends Component {
     const { form, error, isSigningIn } = this.state;
 
     return (
-      <div className="Login">
-        <div className="title">Elemental Battles - powered by EOSIO</div>
-        <div className="description">Please use the Account Name and Private Key generated in the previous page to log into the game.</div>
-        <form name="form" onSubmit={this.handleSubmit}>
+      <div className="forms">
+        <h1>Log In</h1>
+        <form onSubmit={this.handleSubmit}>
           <div className="field">
-            <label>Account name</label>
+            <label>User name</label>
             <input
               type="text"
               name="username"
@@ -93,7 +92,7 @@ class Login extends Component {
             />
           </div>
           <div className="field">
-            <label>Private key</label>
+            <label>Key</label>
             <input
               type="password"
               name="key"
