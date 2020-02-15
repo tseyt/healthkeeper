@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function Login(){
     return (
-        <div className='login-comp'>
-            <form onSubmit= >
+        <div>
+            <form>
                 <label htmlFor='loginEmail'> Email </label>
                 <input type='email' name='loginEmail' placeholder='email'/>
                 <label htmlFor='loginPassword'> Password </label>

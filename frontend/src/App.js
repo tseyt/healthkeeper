@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, BrowserRouter, Redirect } from 'react-router-dom';
 import './App.css';
+import {ApiService} from 'services';
 
 import Home from './Pages/Home';
 import Login from './Pages/Login';
@@ -40,20 +41,20 @@ class App extends React.Component {
       <div className="App">
           <BrowserRouter>
             <Route exact path="/">
-              <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
-              {loggedIn ? <Profile/> : <Home/> }
+              <Header loggedIn={this.loggedIn}/>
+              {this.loggedIn ? <Profile/> : <Home/> }
             </Route>
             <Route exact path="/sign-up">
-              <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
-              {loggedIn ?  <Redirect to='/' /> : <Signup/> }
+              <Header loggedIn={this.loggedIn}/>
+              {this.loggedIn ?  <Redirect to='/' /> : <Signup/> }
             </Route>
             <Route exact path="/login">
-              <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
-              {loggedIn ? <Redirect to='/' /> : <Login loginFunction={logInFunction}/> }
+              <Header loggedIn={this.loggedIn}/>
+              {this.loggedIn ? <Redirect to='/' /> : <Login/> }
             </Route>
             <Route exact path="/profile">
-              <SideHeader loggedIn={loggedIn} logoutFunction={logoutFunction}/>
-              {loggedIn ?  <Profile/> : <Home/> }
+              <SideHeader loggedIn={this.loggedIn}/>
+              {this.loggedIn ?  <Profile/> : <Home/> }
             </Route>
           </BrowserRouter>
       </div>
