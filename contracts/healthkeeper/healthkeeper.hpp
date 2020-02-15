@@ -12,7 +12,7 @@ CONTRACT healthkeeper : public contract {
 
     ACTION login(name username);
     ACTION clear();
-	ACTION access(name username);
+    ACTION patient_access();
 
   private:
     TABLE user_info {
