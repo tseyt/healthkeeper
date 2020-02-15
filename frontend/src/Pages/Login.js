@@ -75,16 +75,10 @@ class Login extends React.Component {
     const { form, error, isSigningIn } = this.state;
 
     return (
-<<<<<<< HEAD
       <div className="Login">
         <div className="title">HealthKeeper - powered by EOSIO</div>
         <div className="description">Please use the Account Name and Private Key generated in the previous page to log into the game.</div>
         <form name="form" onSubmit={this.handleSubmit}>
-=======
-      <div className="forms">
-        <h1>Log In</h1>
-        <form onSubmit={this.handleSubmit}>
->>>>>>> 7d14dbc5f167d4e55a4ce67e842153e832aca2d5
           <div className="field">
             <label>User name</label>
             <input
