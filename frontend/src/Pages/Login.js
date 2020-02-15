@@ -3,6 +3,28 @@ import {ApiService} from 'services';
 import {UserAction} from 'actions';
 
 class Login extends Component {
+  constructor(props) {
+    // Inherit constructor
+    super(props);
+    // State for form data and error message
+    this.state = {
+      form: {
+        username: "",
+        key: "",
+        error: ""
+      },
+      isSigningIn: false
+    };
+    // Bind functions
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  // Runs on every keystroke to update the React state
+  handleChange(event) {
+    const { name, value } = event.target;
+    const { form } = this.state;
+  }
 
   constructor(props) {
     // Inherit constructor
@@ -114,7 +136,7 @@ class Login extends Component {
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
 
@@ -129,17 +151,3 @@ const mapDispatchToProps = {
 // Export a redux connected component
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
-return (
-  <div>
-    <h1>Log In</h1>
-    <div>
-      <form>
-        <label htmlFor='loginEmail'> Email </label>
-        <input type='email' name='loginEmail' placeholder='email' />
-        <label htmlFor='loginPassword'> Password </label>
-        <input type='password' name='loginPassword' placeholder="password" />
-        <button>Login</button>
-      </form>
-    </div>
-  </div>
-);
