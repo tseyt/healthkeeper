@@ -25,29 +25,6 @@ class Login extends React.Component {
   handleChange(event) {
     const { name, value } = event.target;
     const { form } = this.state;
-  }
-
-  constructor(props) {
-    // Inherit constructor
-    super(props);
-    // State for form data and error message
-    this.state = {
-      form: {
-        username: '',
-        key: '',
-        error: '',
-      },
-      isSigningIn: false,
-    }
-    // Bind functions
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  // Runs on every keystroke to update the React state
-  handleChange(event) {
-    const { name, value } = event.target;
-    const { form } = this.state;
 
     this.setState({
       form: {
@@ -99,7 +76,7 @@ class Login extends React.Component {
 
     return (
       <div className="Login">
-        <div className="title">Elemental Battles - powered by EOSIO</div>
+        <div className="title">HealthKeeper - powered by EOSIO</div>
         <div className="description">Please use the Account Name and Private Key generated in the previous page to log into the game.</div>
         <form name="form" onSubmit={this.handleSubmit}>
           <div className="field">
