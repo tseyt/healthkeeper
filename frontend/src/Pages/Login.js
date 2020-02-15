@@ -1,31 +1,9 @@
 import React, { Component } from 'react';
-import {ApiService} from 'services';
-import {UserAction} from 'actions';
+import { connect } from 'react-redux';
+import {ApiService} from '../services';
+import {UserAction} from '../actions';
 
 class Login extends Component {
-  constructor(props) {
-    // Inherit constructor
-    super(props);
-    // State for form data and error message
-    this.state = {
-      form: {
-        username: "",
-        key: "",
-        error: ""
-      },
-      isSigningIn: false
-    };
-    // Bind functions
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  // Runs on every keystroke to update the React state
-  handleChange(event) {
-    const { name, value } = event.target;
-    const { form } = this.state;
-  }
-
   constructor(props) {
     // Inherit constructor
     super(props);
