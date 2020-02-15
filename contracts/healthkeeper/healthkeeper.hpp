@@ -7,14 +7,19 @@ CONTRACT healthkeeper : public contract {
   public:
     using contract::contract;
 
-    ACTION hi(name from, string message);
+    healthkeeper( name receiver, name code, datastream<const char*> ds ):contract(receiver, code, ds),
+                       _users(receiver, receiver.value) {}
+
+    ACTION login(name username);
     ACTION clear();
 
   private:
-    TABLE messages {
+    TABLE user_info {
       name    user;
-      string  text;
+
       auto primary_key() const { return user.value; }
-    };
-    typedef multi_index<name("messages"), messages> messages_table;
+    }
+    typedef multi_index<name("users"), user_info> users_table;
+
+    users_table _users;
 };
