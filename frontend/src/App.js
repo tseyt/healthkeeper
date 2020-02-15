@@ -16,21 +16,31 @@ class App extends React.Component {
     super(props);
     // State for showing/hiding components when the API (blockchain) request is loading
     this.state = {
-      loading: true,
+      loading: false,
+      loggedIn: false,
     };
   }
   
   render() {
+    const { user: { name, patient_id } } = this.props;
+
+    if (name) {
+      loggedIn = true;
+    }
+    else if (!name) {
+      loggedIn = false;
+    }
+    
     return (
       <div className="App">
           <BrowserRouter>
             <Route exact path="/">
               <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
-              {loggedIn ? <Profile/> : <Home/> }
+              {name ? <Profile/> : <Home/> }
             </Route>
             <Route exact path="/sign-up">
               <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
-              {loggedIn ?  <Redirect to='/' /> : <Signup/> }
+              {!name ?  <Redirect to='/' /> : <Signup/> }
             </Route>
             <Route exact path="/login">
               <Header loggedIn={loggedIn} logoutFunction={logoutFunction}/>
