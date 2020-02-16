@@ -21,6 +21,12 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+//  // Runs on every keystroke to update the React state
+//  handleChange(event) {
+//    const { name, value } = event.target;
+//    const { form } = this.state;
+//  }
+//
   // Runs on every keystroke to update the React state
   handleChange(event) {
     const { name, value } = event.target;

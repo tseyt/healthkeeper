@@ -4,7 +4,8 @@ import {ApiService} from '../services';
 import {UserAction} from '../actions';
 
 class Profile extends React.Component {
-  constructor() {
+  constructor(props) {
+    super(props)
     // State for showing/hiding components when the API (blockchain) request is loading
     this.state = {
       loading: true,
@@ -41,8 +42,8 @@ class Profile extends React.Component {
 
   render() {
     // Extract data from state and user data of `UserReducer` from redux
-    const { loading } = this.state;
-    const { user: { name, patient_id } } = this.props;
+//    const { loading } = this.state;
+//    const { user: { name, patient_id } } = this.props;
 
     return (
       <div>

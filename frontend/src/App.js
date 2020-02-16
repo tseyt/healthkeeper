@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { UserAction } from './actions';
 import { Route, BrowserRouter, Redirect } from 'react-router-dom';
 import './App.css';
+//import {ApiService} from 'services';
 
 import Home from './Pages/Home';
 import Login from './Pages/Login';
@@ -32,15 +33,15 @@ class App extends React.Component {
           <BrowserRouter>
             <Route exact path="/">
               <Header loggedIn={loggedIn}/>
-              {name ? <Profile/> : <Home/> }
+              {loggedIn ? <Profile/> : <Home/> }
             </Route>
             <Route exact path="/sign-up">
               <Header loggedIn={loggedIn}/>
-              {!name ? <Signup/> : <Redirect to='/' /> }
+              {loggedIn ?  <Signup/> : <Redirect to='/'/> }
             </Route>
             <Route exact path="/login">
               <Header loggedIn={loggedIn}/>
-              {loggedIn ? <Login/> : <Redirect to='/'/>}
+              {loggedIn ? <Login/> : <Redirect to="/"/> }
             </Route>
             <Route exact path="/profile">
               <SideHeader loggedIn={loggedIn}/>
