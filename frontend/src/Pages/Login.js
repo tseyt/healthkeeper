@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import { connect } from 'react-redux';
-import { ApiService } from 'services';
-import { UserAction } from 'actions';
+import {ApiService} from '../services';
+import {UserAction} from '../actions';
 
 class Login extends React.Component {
   constructor(props) {
@@ -82,11 +82,11 @@ class Login extends React.Component {
 
     return (
       <div className="Login">
-        <div className="title">Elemental Battles - powered by EOSIO</div>
+        <div className="title">HealthKeeper - powered by EOSIO</div>
         <div className="description">Please use the Account Name and Private Key generated in the previous page to log into the game.</div>
         <form name="form" onSubmit={this.handleSubmit}>
           <div className="field">
-            <label>Account name</label>
+            <label>User name</label>
             <input
               type="text"
               name="username"
@@ -99,7 +99,7 @@ class Login extends React.Component {
             />
           </div>
           <div className="field">
-            <label>Private key</label>
+            <label>Key</label>
             <input
               type="password"
               name="key"

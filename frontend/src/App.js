@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { UserAction } from 'actions';
+import { UserAction } from './actions';
 import { Route, BrowserRouter, Redirect } from 'react-router-dom';
 import './App.css';
 //import {ApiService} from 'services';

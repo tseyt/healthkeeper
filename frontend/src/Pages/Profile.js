@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ApiService } from 'services';
-import { UserAction } from 'actions';
+import {ApiService} from '../services';
+import {UserAction} from '../actions';
 
 class Profile extends React.Component {
   constructor(props) {
