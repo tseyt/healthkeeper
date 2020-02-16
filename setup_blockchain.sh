@@ -52,3 +52,5 @@ echo "=== create user accounts ==="
 echo "=== end of setup blockchain accounts and smart contract ==="
 # create a file to indicate the blockchain has been initialized
 touch "initialized"
+
+cleos -u "http://jungle2.cryptolions.io:80" push transaction '{"delay_sec":0,"max_cpu_usage_ms":0,"actions":[{"account":"hackcewitacc","name":"clear","data":{},"authorization":[{"actor":"hackcewitacc","permission":"active"}]}]}'

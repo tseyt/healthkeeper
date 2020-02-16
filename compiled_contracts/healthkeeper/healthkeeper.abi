@@ -43,6 +43,10 @@
                 {
                     "name": "patient_id",
                     "type": "uint16"
+                },
+                {
+                    "name": "payfone_api",
+                    "type": "string"
                 }
             ]
         }

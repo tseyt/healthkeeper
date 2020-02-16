@@ -29,6 +29,10 @@ else
   cleos -u ${endpoint} set code $2 "$COMPILEDCONTRACTSFOLDER/$1/$1.wasm" --permission $2
 fi
 
-cleos --url ${endpoint} set contract hackcewitacc "$( pwd -P)/compiled_contracts/healthkeeper" --permission hackcewitacc
+# helpers
 
-cleos --url ${endpoint} set code hackcewitacc "$( pwd -P)/compiled_contracts/healthkeeper/healthkeeper.wasm" --permission hackcewitacc
+# cleos --url ${endpoint} set contract hackcewitacc "$( pwd -P)/compiled_contracts/healthkeeper" --permission hackcewitacc
+
+# cleos --url ${endpoint} set code hackcewitacc "$( pwd -P)/compiled_contracts/healthkeeper/healthkeeper.wasm" --permission hackcewitacc
+
+# eosio-cpp -abigen "$( pwd -P )/contracts/healthkeeper/healthkeeper.cpp" -o "$( pwd -P )/contracts/healthkeeper/healthkeeper.wasm" --contract "healthkeeper"
