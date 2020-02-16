@@ -12,7 +12,7 @@ class Profile extends React.Component {
     };
     // Bind functions
     this.loadUser = this.loadUser.bind(this);
-    this.handlePatientAccess = this.handleSignForAccess.bind(this);
+    this.handlePatientAccess = this.handleAccessPatientData.bind(this);
     // Call `loadUser` before mounting the app
     this.loadUser();
   }

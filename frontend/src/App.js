@@ -26,14 +26,14 @@ class App extends React.Component {
   
   render() {
     const { user: { name, patient_id } } = this.props;
-    const loggedIn = this.state;
-
+    const loggedIn = this.state.loggedIn;
+    
     return (
       <div className="App">
           <BrowserRouter>
             <Route exact path="/">
               <Header loggedIn={loggedIn}/>
-              {loggedIn ? <Profile/> : <Home/> }
+              {loggedIn ? <Profile/> : <Home/>}
             </Route>
             <Route exact path="/sign-up">
               <Header loggedIn={loggedIn}/>
