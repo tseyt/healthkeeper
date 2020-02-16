@@ -66,7 +66,7 @@ class ApiService {
   }
 
   static accessPatientData(patientId) {
-    return takeAction("access_patient_data", { username: localStorage.getItem("healthkeeper_account"), patient_id: patientId });
+    return takeAction("accesspdata", { username: localStorage.getItem("healthkeeper_account"), patient_id: patientId });
   }
 
   static async getUserByName(username) {

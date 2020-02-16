@@ -24,7 +24,11 @@ if [ ! -z $3 ]; then cleos wallet unlock -n $3 --password $4 || true; fi
 
 # set (deploy) compiled contract to blockchain if an abi file is found in compiled contracts folder
 if [ -f "$COMPILEDCONTRACTSFOLDER/$1/$1.abi" ]; then
-  cleos set contract $2 "$COMPILEDCONTRACTSFOLDER/$1" --permission $2
+  cleos -u ${endpoint} set contract $2 "$COMPILEDCONTRACTSFOLDER/$1" --permission $2
 else
-  cleos set code $2 "$COMPILEDCONTRACTSFOLDER/$1/$1.wasm" --permission $2
+  cleos -u ${endpoint} set code $2 "$COMPILEDCONTRACTSFOLDER/$1/$1.wasm" --permission $2
 fi
+
+cleos --url ${endpoint} set contract hackcewitacc "$( pwd -P)/compiled_contracts/healthkeeper" --permission hackcewitacc
+
+cleos --url ${endpoint} set code hackcewitacc "$( pwd -P)/compiled_contracts/healthkeeper/healthkeeper.wasm" --permission hackcewitacc

@@ -23,10 +23,10 @@ ACTION healthkeeper::clear() {
   }
 }
 
-ACTION healthkeeper::access_patient_data(name username, int patient_id) {
+ACTION healthkeeper::accesspdata(name username, uint16_t patient_id) {
   require_auth(username);
 
 
 }
 
-EOSIO_DISPATCH(healthkeeper, (login)(clear)(access_patient_data))
+EOSIO_DISPATCH(healthkeeper, (login)(clear)(accesspdata))

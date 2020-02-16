@@ -12,14 +12,15 @@ CONTRACT healthkeeper : public contract {
 
     ACTION login(name username);
     ACTION clear();
-    ACTION access_patient_data();
+    ACTION accesspdata(name username, uint16_t patient_id);
 
   private:
     TABLE user_info {
-      name    user;
+      name        username;
+      uint16_t    patient_id = 1;
 
-      auto primary_key() const { return user.value; }
-    }
+      auto primary_key() const { return username.value; }
+    };
     typedef multi_index<name("users"), user_info> users_table;
 
     users_table _users;
