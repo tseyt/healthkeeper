@@ -7,9 +7,8 @@ export default function Header({loggedIn}){
             <a className='logo' href='/'><img alt="logo" className="designed-logo" src={Logo}></img></a>
             <nav >
                 {!loggedIn && <a href='/'>Home</a>}
-                {!loggedIn && <a href='#'>Log Out</a>}
-                {loggedIn &&<a href='/login'>Login</a>}
-                {loggedIn && <a href='/sign-up'>Sign Up</a>}
+                {!loggedIn && <a href='/login'>Login</a>}
+                {loggedIn && <a href='#'>Log Out</a>}
             </nav>
         </header>
     )

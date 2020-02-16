@@ -26,7 +26,8 @@ class App extends React.Component {
   
   render() {
     const { user: { name, patient_id } } = this.props;
-    const loggedIn = this.state;
+    
+    const loggedIn = (name == "") ? false : true;
 
     return (
       <div className="App">
@@ -35,17 +36,13 @@ class App extends React.Component {
               <Header loggedIn={loggedIn}/>
               {loggedIn ? <Profile/> : <Home/> }
             </Route>
-            <Route exact path="/sign-up">
-              <Header loggedIn={loggedIn}/>
-              {loggedIn ?  <Signup/> : <Redirect to='/'/> }
-            </Route>
             <Route exact path="/login">
               <Header loggedIn={loggedIn}/>
-              {loggedIn ? <Login/> : <Redirect to="/"/> }
+              {loggedIn ? <Redirect to="/"/> : <Login/> }
             </Route>
             <Route exact path="/profile">
               <SideHeader loggedIn={loggedIn}/>
-              {loggedIn ?  <Profile/> : <Home/> }
+              {loggedIn ? <Profile/> : <Home/> }
             </Route>
           </BrowserRouter>
       </div>
