@@ -34,7 +34,7 @@ class App extends React.Component {
           <BrowserRouter>
             <Route exact path="/">
               <Header loggedIn={loggedIn}/>
-              {loggedIn ? <Profile/> : <Home/> }
+              {loggedIn ? <Profile/> : <Home/>}
             </Route>
             <Route exact path="/login">
               <Header loggedIn={loggedIn}/>
