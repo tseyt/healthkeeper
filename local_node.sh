@@ -1,4 +1,4 @@
-nodeos -e -p eosio --plugin eosio::chain_api_plugin --plugin eosio::history_api_plugin --contracts-console
+nodeos -e -p eosio --plugin eosio::chain_api_plugin --plugin eosio::history_api_plugin --contracts-console >> nodeos.log 2>&1 &
 
 # key for eosio account and export the generated password to a file for unlocking wallet later
 cleos wallet create -n hackcewitwal2 --to-console | tail -1 | sed -e 's/^"//' -e 's/"$//' > local_healthkeeper_wallet_password.txt
