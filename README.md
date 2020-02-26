@@ -3,18 +3,6 @@ Submitted for Hack@CEWIT 2020
 - WINNER Best Use of Blockchain: The Most Trusted
 - WINNER Softheon’s Pick: Most Privacy-Conscious Hack
 
-## Keys
-
-JUNGLE TESTNET - HACK@CEWIT
-
-hackcewitacc
-Private key: 5JXsXPMcm9VSFagXrka2x4ihYS1sfdZQPBxm4CsN9GpDMdZoCpN
-Public key: EOS7AeHyma4qEZV32YA3FdP7gAV48qAmb83YcXfQtoHx4HkuxNPe6
-
-johndoemd123
-Private key: 5J3bbRR6rdMqRW48vbzYf74Dnd6GV63nNYZbrzX8aoargd6icCS
-Public key: EOS7bXtCUdHdvVnv1Gz6GvvDriDj3K3UYw2zTsmreUCkxKA2zhPX5
-
 ## Inspiration
 Data breaches and hacks are becoming more and more of a problem for the public institutions of today. The Healthcare industry is no different and breaches of sensitive healthcare data are arguably even more costly, with organizations losing millions of dollars as well as potentially posing harm to real human lives. Our goal with HealthKeeper is to solve the pitfalls of traditional databases and provide a new solution to preserve and protect this vital data using highly-secure, passwordless, and cost-effective Blockchain protocols. The ultimate goal being to improve healthcare outcomes for us all.
 
@@ -41,3 +29,15 @@ HealthKeeper will roll out its software to participating hospitals and other hea
 
 ## Built With
 blockchain, css3, eosio, gcp, html5, mongodb, photoshop, react, redux
+
+### Keys for testing !!!
+
+JUNGLE TESTNET - HACK@CEWIT
+
+hackcewitacc
+- Private key: 5JXsXPMcm9VSFagXrka2x4ihYS1sfdZQPBxm4CsN9GpDMdZoCpN
+- Public key: EOS7AeHyma4qEZV32YA3FdP7gAV48qAmb83YcXfQtoHx4HkuxNPe6
+
+johndoemd123
+- Private key: 5J3bbRR6rdMqRW48vbzYf74Dnd6GV63nNYZbrzX8aoargd6icCS
+- Public key: EOS7bXtCUdHdvVnv1Gz6GvvDriDj3K3UYw2zTsmreUCkxKA2zhPX5
