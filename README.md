@@ -1,7 +1,7 @@
 # HealthKeeper
 Submitted for Hack@CEWIT 2020
-WINNER Best Use of Blockchain: The Most Trusted
-WINNER Softheon’s Pick: Most Privacy-Conscious Hack
+- WINNER Best Use of Blockchain: The Most Trusted
+- WINNER Softheon’s Pick: Most Privacy-Conscious Hack
 
 ## Keys
 
