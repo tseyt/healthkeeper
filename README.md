@@ -15,7 +15,7 @@ Health Keeper allows hospitals and other healthcare organizations to spin up the
 We used the EOSIO software protocol to configure our blockchain and backend for our application. We wrote the C++ Smart Contracts necessary to deploy to our blockchain and push actions to the chain. With our blockchain backend built out, we connected it to a frontend using React and Redux featuring passwordless login functionality and a demo of what this might look like from the Healthcare organization's perspective.
 
 ## Challenges we ran into
-We had trouble getting everyone up to speed on how to use this new, bleeding-edge tech stack and understanding the fundamentals and use cases of Blockchain technology. Another challenge we ran into is figuring out how we can provide value to the giant Healthcare industry with our software.
+We had trouble getting everyone up to speed on how to use this unfamiliar tech stack and understanding the fundamentals and use cases of Blockchain technology. Another challenge we ran into is figuring out how we can provide value to the giant Healthcare industry with our software.
 
 ## Accomplishments that we are proud of
 Host our own Blockchain nodes.
